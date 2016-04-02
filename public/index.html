@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="omdbSort">
+<head>
+  <title>Flickr Sort</title>
+</head>
+<body ng-controller="omdb">
+  <input type="text" ng-model="search"></input>
+  <button ng-click="loadMovie()">Load</button>
+  <table ng-table="omdbTable" show-filter="true">
+    <tr ng-repeat="movie in $data">
+
+      <td data-title="'Title Name'" sortable="'Title'" filter="{Title: 'text'}">{{ movie.title }}</td>
+      <!-- <td data-title="'Description'" sortable="'description'"  filter="{description: 'text'}">{{ repo.description }}</td> -->
+    </tr>
+  </table>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ng-table/0.8.3/ng-table.min.js"></script>
+
+  <script type="text/javascript" src="app.js"></script>
+</body>
+</html>
